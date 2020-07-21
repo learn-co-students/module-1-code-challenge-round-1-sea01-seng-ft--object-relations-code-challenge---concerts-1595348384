@@ -12,4 +12,22 @@ class Band
     def self.all
         @@all
     end
+
+    def concerts
+        Concert.all.select {|concert| concert.band == self}
+        # binding.pry
+    end
+
+    def play_in_venue(venue, date)
+        Concert.new(date, self, venue)
+        # binding.pry
+    end
+
+    # def all_introductions
+    #     concerts
+    #     binding.pry
+    # end
+
+    
+
 end
